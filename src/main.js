@@ -1,6 +1,7 @@
 import { DataForm } from "./ui/DataForm.js";
 import { TemperaturesList } from "./ui/TemperaturesList.js";
 import { WeatherDataProcessor } from "./data/WeatherDataProcessor.js";
+//https://api.open-meteo.com/v1/gfs?latitude=31.0461&longitude=34.8516&hourly=temperature_2m&timezone=IST&start_date=2022-12-18&end_date=2023-01-03
 
 const weatherProcessor = new WeatherDataProcessor();
 
@@ -27,3 +28,8 @@ dataForm.addSubmitHandler( (dataFF) => {
     promiseData.then( data => temperatureList.showResult(data));
 })
 
+
+// dataForm.addSubmitHandler(async (dataFF) => {
+//     const promiseData = await weatherProcessor.getData(dataFF);
+//     promiseData.then(data => temperatureList.showResult(data));
+// })
